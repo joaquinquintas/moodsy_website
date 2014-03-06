@@ -1,0 +1,40 @@
+{
+    "version": 1,
+    "disable_existing_loggers": "False",
+    "formatters": {
+        "default": {
+            "format": "%(asctime)s %(levelname)s %(name)s %(message)s"
+        },
+        "no_timestamp": {
+            "format": "%(levelname)s %(name)s %(message)s"
+        }
+    },
+    "handlers": {
+        "syslog":{
+            "class": "logging.handlers.SysLogHandler",
+            "level":"DEBUG",
+            "formatter": "no_timestamp",
+            "address": "/dev/log"
+        },
+        "console": {
+            "class": "logging.StreamHandler",
+            "level": "DEBUG",
+            "formatter": "default"
+        },
+        "mail" : {
+            "()" : "utils.MailLogger",
+            "level": "WARN",
+            "formatter": "default"
+        }
+    },
+    "root": {
+        "handlers": ["syslog", "console", "mail"],
+        "level": "DEBUG"
+    },
+    "loggers": {
+        "tornado.access": {
+            "handlers": ["syslog", "console"],
+            "propagate": false
+        }
+    }
+}
