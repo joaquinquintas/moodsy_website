@@ -9,7 +9,6 @@ class Subscriber(Base, JsonEncodable):
     __tablename__ = 'subscriber'
 
     id = Column(Integer, primary_key=True)
-    name = Column(String)
     email = Column(String)
     timestamp = Column(DateTime)
 

@@ -11,13 +11,12 @@ class SubscriberSignUp(BaseHandler):
 
     @removeslash
     def post(self):
-        name = self.get_argument('name')
         email = self.get_argument('email')
         timestamp = datetime.datetime.now()
 
         session = self.Session()
 
-        user = Subscriber(name=name, email=email, timestamp=timestamp)
+        user = Subscriber(email=email, timestamp=timestamp)
 
         headers = []
         for k, v in self.request.headers.iteritems():
