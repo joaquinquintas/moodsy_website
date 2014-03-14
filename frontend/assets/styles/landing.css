@@ -5,14 +5,66 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-size: 10px;
+}
+
+@media (max-width:1261px) {
+    html, body {
+      font-size: 12px;
+    }
+}
+
+@media (max-width:1164px) {
+    html, body {
+      font-size: 11px;
+    }
+}
+
+@media (max-width:1067px) {
+    html, body {
+      font-size: 10px;
+    }
+}
+
+@media (max-width:970px) {
+    html, body {
+      font-size: 9px;
+    }
+}
+
+@media (max-width:873px) {
+    html, body {
+      font-size: 8px;
+    }
+}
+
+@media (max-width:873px) {
+    html, body {
+      font-size: 7px;
+    }
+}
+
+@media (max-width:776px) {
+    html, body {
+      font-size: 6px;
+    }
+}
+
+@media (max-width:679px) {
+    html, body {
+      font-size: 5px;
+    }
+}
+
+@media (max-width:582px) {
+    html, body {
+      font-size: 4px;
+    }
 }
 
 div.slide {
-  height: 100%;
+  width: 100%;
   font-family: 'Lato', sans-serif;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 div.slide > div {
@@ -33,60 +85,48 @@ div#slide1 {
   background-image: url('../images/upper-border.png');
   background-repeat: no-repeat;
   background-size: contain;
+  height: 100%;
 }
 
 div#slide1 > div {
-  padding-left: 82px;
+  padding-left: 8.2rem;
+  background-image: url('../images/linitas.png');
+  background-size: cover;
 }
 
 div#slide1 h1 {
   font-weight: bold;
-  font-size: 33px;
-  margin-top: 64px;
+  font-size: 3.3rem;
+  margin-top: 3.4rem;
 }
 
 div#slide1 p {
-  font-size: 20px;
+  font-size: 2.2rem;
+  margin-top: 1rem;
 }
 
 div#slide1 label {
-  font-size: 21px;
+  font-size: 2.1rem;
 }
 
-div#slide1 div#banner {
-  margin-top: 111px;
-  clear: both;
-  position: relative;
-  margin-left: -82px;
+div#slide1 img#banner {
+  margin-top: 3rem;
+  margin-left: -8.2rem;
+  width: 60%;
 }
 
-div#slide1 div#banner img#logo {
-  position: absolute;
-  left: 15px;
-  top: -70px;
-}
-
-div#slide1 p#circle-references {
-  margin-top: 8px;
-}
-
-div#slide1 p#circle-references span {
-  margin-left: 7px;
-  margin-right: 42px;
+div#slide1 img#circles {
+  width: 40.6%;
+  margin-top: 0rem;
 }
 
 div#slide1 img#three-of-em {
   position: absolute;
-  bottom: -24px;
-  right: 24px;
+  bottom: -4%;
+  right: 2.4rem;
   z-index: 200;
+  width: 40%;
 }
-
-/*@media (max-width:960px) {
-    div#slide1 img#three-of-em {
-      max-width: 40%;
-    }
-}*/
 
 
 /***********
@@ -98,20 +138,27 @@ div#slide2 {
   background-color: #ffffff;
   color: #808080;
   font-weight: thin;
+  padding-top: 7rem;
+  padding-bottom: 4rem;
+}
+
+div#slide2 > div{
+  display: table;
+  width: 100%;
+}
+
+div#slide2 div#iphones, div#slide2 div#get-app {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
 }
 
 div#slide2 div#iphones {
-  display: table;
-  height: 100%;
-  min-width: 100%;
+  width: 55%;
 }
 
-div#slide2 div#iphones div {
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-  height: 100%;
-  /*white-space: nowrap;*/
+div#slide2 div#iphones img {
+  width: 40%;
 }
 
 @media (max-width:890px) {
@@ -120,21 +167,26 @@ div#slide2 div#iphones div {
     }
 }
 
-/*div#slide2 div#iphones div#get-app {
-  width: 100%;
-}*/
+div#slide2 div#get-app {
+  padding-right: 6rem;
+}
 
-div#slide2 div#iphones div#get-app img {
-  width: 150px;
+div#slide2 div#get-app img {
+  width: 21rem;
 }
 
 div#slide2 h1 {
-  font-size: 37px;
+  font-size: 5.5rem;
   font-weight: 100;
+  margin-bottom: 1rem;
+  line-height: 1em;
 }
 
 div#slide2 p {
-  font-size: 15px;
+  font-size: 2.3rem;
+  font-weight: 300;
+  line-height: 1.5em;
+  margin-top: -0.3em;
 }
 
 /***********
@@ -143,42 +195,54 @@ div#slide2 p {
 
 div#slide3 {
   background-color: #000000;
+  overflow-x: hidden;
 }
 
 div#slide3 > div {
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 div#slide3 h1 {
+  margin-left: 1rem;
   font-weight: bold;
   color: #93e99e;
-  font-size: 25px;
+  font-size: 3.7rem;
+  margin-top: 5rem;
+}
+
+div#slide3 div#analytics {
+  margin-left: 9rem;
 }
 
 div#slide3 h2 {
-  font-size: 31px;
+  font-size: 4.2rem;
   color: #ffffff;
   font-weight: 300;
+  margin-bottom: 0;
 }
 
 div#slide3 p {
+  margin-top: 1rem;
   font-weight: 300;
-  font-size: 17px;
+  font-size: 2.34rem;
   color: #ffffff;
+  margin-bottom: 5rem;
 }
 
 div#slide3 label {
   font-weight: 300;
-  font-size: 20px;
+  font-size: 3rem;
   color: #ffffff;
 }
 
 div#slide3 button {
   /* http://jsfiddle.net/BNvke/1/ */
-  padding: 8px 4px;
-  margin-right: 8px;
-  margin-bottom: 10px;
+  padding: 1rem 2rem;
+  font-size: 3.5rem;
+  margin-right: 0.8rem;
+  margin-bottom: 1rem;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
   display: inline-block;
   white-space: nowrap;
@@ -187,7 +251,7 @@ div#slide3 button {
   outline: none;
   overflow: visible;
   cursor: pointer;
-  border-radius: 4px;
+  border-radius: 0.7rem;
   background-color: #93e99e;
   border: 0;
   font-weight: bold;
@@ -198,31 +262,22 @@ div#slide3 button {
 div#slide3 img#corbatin {
   position: absolute;
   top: 0;
-  right: 25px;
-  height: 50%;
+  right: 5rem;
+  height: 46%;
 }
 
-div#slide3 div#analytics {
-  margin-left: 65px;
-}
-
-div#slide3 div#monitor {
+div#slide3 img#monitor {
   z-index: 200px;
-  position: absolute;
-  left: 0;
-  bottom: 25px;
+  float: left;
   text-align: center;
-  max-width: 100%;
-}
-
-div#slide3 div#monitor img{
-  width: 90%;
+  width: 104%;
+  margin-left: -2.5rem;
 }
 
 div#slide3 div#customize {
   position: absolute;
-  right: 25px;
-  bottom: 25px;
+  right: 3.4rem;
+  bottom: 0rem;
 }
 
 /***********
@@ -235,6 +290,7 @@ div#slide4 {
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: contain;
+  padding-bottom: 6rem;
 }
 
 div#slide4 > div {
@@ -244,27 +300,30 @@ div#slide4 > div {
 
 div#slide4 h1 {
   font-weight: bold;
-  font-size: 25px;
+  font-size: 3.7rem;
   color: #000000;
 }
 
 div#slide4 h2 {
   font-weight: 300;
-  font-size: 31px;
+  font-size: 4.2rem;
   color: #000000;
-  margin-left: 65px;
+  margin-left: 6.5rem;
 }
 
 div#slide4 p {
+  margin-top: 7.5rem;
   font-weight: 300;
-  font-size: 20px;
+  font-size: 2.65rem;
   color: #666666;
+  line-height: 1.4em;
+  margin-right: 10%;
 }
 
 div#slide4 form {
-  font-size: 16px;
+  font-size: 2rem;
   color: #666666;
-  margin-top: 80px;
+  margin-top: 6rem;
   display: inline-block;
 }
 
@@ -276,15 +335,15 @@ div#slide4 form {
 
 div#slide4 button {
   font-weight: bold;
-  font-size: 19px;
+  font-size: 1.9rem;
   color: #666666;
 }
 
 div#slide4 img#geeks {
-  margin-top: 50px;
+  margin-top: 5rem;
   float: left;
-  margin-right: 50px;
-  max-width: 50%;
+  margin-right: 5rem;
+  max-width: 30%;
 }
 
 div#slide4 div#dev-info {
@@ -295,16 +354,26 @@ div#slide4 div#dev-info {
   height: 50%;
 }
 
+div#slide4 div#dev-info label {
+  position: relative;
+  top: -1rem;
+}
+
 div#slide4 div#dev-info input {
   border: none;
-  border-radius: 2px;
-  height: 26px;
-  margin-right: 12px;
+  border-radius: 0.2rem;
+  height: 5.5rem;
+  margin-right: 1.2rem;
+  width: 55rem;
+  position: relative;
+  top: -0.2rem;
+  font-size: 3rem;
 }
 
 div#slide4 div#dev-info button {
-  padding: 4px 28px;
-  margin-right: 8px;
+  padding: 1rem 2rem;
+  font-size: 3.5rem;
+  margin-right: 0.8rem;
   margin-bottom: 10px;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
   display: inline-block;
@@ -327,20 +396,21 @@ div#slide4 div#dev-info button {
 
 footer {
   font-family: 'Open Sans', sans-serif;
-  height: 76px;
+  height: 7.6rem;
   background-color: #2b2f31;
-  padding: 0 14px;
+  padding: 0 1.4rem;
   color: #999999;
+  font-size: 2rem;
 }
 
 footer span {
-  line-height: 76px;
-  margin-left: 14px;
+  line-height: 7.6rem;
+  margin-left: 1.4rem;
 }
 
 footer img.social-network {
   float: right;
-  width: 48px;
-  margin: 14px 14px;
-  line-height: 76px;
+  width: 4.8rem;
+  margin: 1.4rem;
+  line-height: 7.6rem;
 }
