@@ -17,8 +17,10 @@ logging.config.dictConfig(logging_config)
 
 logger = logging.getLogger(__name__)
 
-db_string = 'postgresql+psycopg2://moodsy:YSEIY3wRmevzllItfKeqLfnF@' + \
-            'localhost:5432/moodsy'
+db_config = json.load(open('db.json', 'r'))
+db_string = '{protocol}://{user}:{password}@{host}:{port}/{name}'. \
+    format(**db_config)
+
 logger.info("Initializing schema: {}".format(db_string))
 init_schema(db_string)
 

@@ -1,0 +1,8 @@
+{
+  "protocol": "postgresql+psycopg2",
+  "user": "moodsy",
+  "password": "YSEIY3wRmevzllItfKeqLfnF",
+  "host": "dev.db0.moodsy.me",
+  "port": 5432,
+  "name": "moodsy"
+}
