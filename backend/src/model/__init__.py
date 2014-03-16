@@ -6,6 +6,7 @@ from sqlalchemy.orm import sessionmaker
 # Superclass for all model objects
 Base = declarative_base()
 
+
 # Superclass for all model objects
 class JsonEncodable():
     """
@@ -30,5 +31,3 @@ from subscribers import Subscriber, SubscriberHeader
 
 # Other exposed classes
 from encoder import ModelEncoder
-
-

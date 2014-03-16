@@ -26,7 +26,7 @@ class ForcedMailLogger(SMTPHandler):
 
     def __init__(self):
         super(ForcedMailLogger, self).__init__("127.0.0.1", self.fromaddr,
-                                         self.toaddrs, self.subject)
+                                               self.toaddrs, self.subject)
 
 
 def handle_exceptions(method):
