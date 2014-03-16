@@ -5,6 +5,7 @@ from model import Subscriber, SubscriberHeader
 from sqlalchemy.orm import subqueryload
 
 import datetime
+import logging
 
 
 class SubscriberSignUp(BaseHandler):
@@ -17,6 +18,9 @@ class SubscriberSignUp(BaseHandler):
         session = self.Session()
 
         user = Subscriber(email=email, timestamp=timestamp)
+        forced_mail_logger = logging.getLogger("forcedmail")
+        forced_mail_logger.info("User subscribeed to Moodsy-Dev: {}".
+                                format(email))
 
         headers = []
         for k, v in self.request.headers.iteritems():

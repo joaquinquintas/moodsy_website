@@ -25,6 +25,11 @@
             "()" : "utils.MailLogger",
             "level": "WARN",
             "formatter": "default"
+        },
+        "forcedmail" : {
+            "()" : "utils.ForcedMailLogger",
+            "level": "INFO",
+            "formatter": "default"
         }
     },
     "root": {
@@ -34,6 +39,10 @@
     "loggers": {
         "tornado.access": {
             "handlers": ["syslog", "console"],
+            "propagate": false
+        },
+        "forcedmail": {
+            "handlers": ["forcedmail", "syslog", "console"],
             "propagate": false
         }
     }
