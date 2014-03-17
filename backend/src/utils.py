@@ -10,8 +10,8 @@ logger = logging.getLogger(__name__)
 
 
 class MailLogger(SMTPHandler):
-    subject = 'MESSAGE FROM MOODSY BACKEND!'
-    fromaddr = "Moodsy Backend <app@focusfreak.org>"
+    subject = 'Moodsy Backend Logger Message!'
+    fromaddr = "Moodsy Backend <app@moodsy.me>"
     toaddrs = ["Hugo Osvaldo Barrera <hugo@barrera.io>"]
 
     def __init__(self):
@@ -21,7 +21,7 @@ class MailLogger(SMTPHandler):
 
 class ForcedMailLogger(SMTPHandler):
     subject = 'User subscribed to Moodsy-Dev!'
-    fromaddr = "Moodsy Backend <app@focusfreak.org>"
+    fromaddr = "Moodsy Backend <app@moodsy.me>"
     toaddrs = ["Joaquin Quintas <joaquin@moodsy.me>"]
 
     def __init__(self):
