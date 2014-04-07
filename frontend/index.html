@@ -5,7 +5,13 @@
 <meta name="referrer" content="always">
 <title>Moodsy</title>
 
-<link href="assets/styles/landing.css" rel="stylesheet" />
+<link rel="stylesheet" href="assets/styles/landing.css" />
+<link rel="stylesheet" href="assets/styles/animate.min.css">
+
+<script src="assets/scripts/thirdparty/wow.min.js"></script>
+<script>
+  new WOW().init();
+</script>
 
 <script src="assets/scripts/thirdparty/jquery-2.1.0.min.js"></script>
 <script src="assets/scripts/landing.js"></script>
@@ -15,25 +21,25 @@
 
 <div class="slide" id="slide1"><div>
 
-  <img src="assets/images/banner.svg" id="banner" alt="Moodsy">
+  <img src="assets/images/banner.svg" id="banner" alt="Moodsy" class="wow fadeInLeft">
 
-  <h1>See how your feelings change,<br>and discover why!</h1>
+  <h1 class="wow fadeInLeft">See how your feelings change,<br>and discover why!</h1>
 
-  <p>Track your emotions and how they change by place<br>and with friends. Discover more about yourself and<br>share with your friends. With over 170 different<br>emotions to track, soon you'll be feeling Moodsy too!</p>
+  <p class="wow fadeInLeft">Track your emotions and how they change by place<br>and with friends. Discover more about yourself and<br>share with your friends. With over 170 different<br>emotions to track, soon you'll be feeling Moodsy too!</p>
 
-  <img src="assets/images/botonera.svg" id="circles">
+  <img src="assets/images/botonera.svg" id="circles"  class="wow fadeIn">
 
-  <img src="assets/images/three-tipitos.svg" id="three-of-em">
+  <img src="assets/images/three-tipitos.svg" id="three-of-em" class="wow fadeInUp">
 
 </div></div>
 
 <div class="slide" id="slide2"><div>
 
-  <div id="iphones">
+  <div id="iphones" class="wow fadeInUp">
     <img src="assets/images/iPhone-1.svg" >
     <img src="assets/images/iPhone-2.svg" class="highres" >
   </div>
-  <div id="get-app">
+  <div id="get-app" class="wow fadeInRightBig">
     <h1>Integrated Tracking App</h1>
     <p><strong>See how your mood changes</strong>, when, where, and why.<br>Start tracking and sharing your emotions from our<br>fun and easy to use iPhone app. Get detailed<br>readouts and see what places or people<br>trigger certain emotions.</p>
     <img src="assets/images/get-app.png">
@@ -46,18 +52,18 @@
 
 
 <div class="slide" id="slide3"><div>
-  <img src="assets/images/corbatin.svg" id="corbatin">
-  <h1>Enterprise</h1>
-  <div id="analytics">
+  <img class="wow fadeInDown" src="assets/images/corbatin.svg" id="corbatin">
+  <h1 class="wow fadeInLeft">Enterprise</h1>
+  <div id="analytics" class="wow fadeInDown">
     <h2>Are you interested in adding emotional<br>analytics to your web site?</h2>
     <p>Get Moodsy analytics on your website to see your users emotions,<br>
     <strong>It's easy</strong>. Just conﬁgure our moods plug in, download it, and put it on<br>
     your site. Your users will show you exactly how they feel in real time.
     </p>
   </div>
-  <img id="monitor" src="assets/images/monitor.svg">
+  <img class="wow fadeIn" id="monitor" src="assets/images/monitor.svg">
 
-  <div id="customize">
+  <div id="customize" class="wow fadeInDown">
     <label>Customize the limitless possibilities<br>
     of <strong>Moodsy</strong> to your site!</label>
     <p>
@@ -71,19 +77,19 @@
 
 <div class="slide" id="slide4"><div>
 
-  <h1>Developers</h1>
+  <h1 class="wow fadeInLeft">Developers</h1>
 
-  <h2>Integrate your app with Moodsy</h2>
+  <h2 class="wow fadeInLeft">Integrate your app with Moodsy</h2>
 
   <div id="dev-info">
-    <img src="assets/images/geeks.svg" id="geeks">
-    <p>The first version of the MOODSY API is an exciting step towards
+    <img src="assets/images/geeks.svg" id="geeks" class="wow fadeInUp">
+    <p class="wow fadeIn">The first version of the MOODSY API is an exciting step towards
     creating your own mood trackers using the Moodsy platform.
     Showcase the amazing content Moodsy users create every second,
     in fun and innovative ways.<br>
-    <strong>Build something inspiring with Moodsy!</strong></p>
+    <strong class="wow fadeIn">Build something inspiring with Moodsy!</strong></p>
 
-    <form>
+    <form class="wow fadeInRight">
       <label for="email">Enter your email</label><br>
       <input type="email" id="email">
       <button id="dev-subscribe">Enter</button><br>
@@ -97,12 +103,12 @@
 <div style="clear: both"></div>
 
 <footer>
-  <span>© Copyright 2014 Moodsy</span>
+  <span class="wow fadeIn">© Copyright 2014 Moodsy</span>
   <a href="https://twitter.com/Moodsy_App">
-    <img class="social-network" src="assets/images/twitter.svg">
+    <img class="social-network wow fadeIn" src="assets/images/twitter.svg">
   </a>
   <a href="https://www.facebook.com/pages/Moodsy/219639678223134">
-    <img class="social-network" src="assets/images/facebook.svg">
+    <img class="social-network wow fadeIn" src="assets/images/facebook.svg">
   </a>
 </footer>
 
