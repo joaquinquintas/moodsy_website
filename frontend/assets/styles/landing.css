@@ -79,13 +79,16 @@ div.slide > div {
  * SLIDE 1 *
  ***********/
 
-div#slide1 {
+div#slide1, body.privacy {
   background-color: #e7e7e5;
   color: #999999;
   background-image: url('../images/upper-border.png');
   background-repeat: no-repeat;
   background-size: contain;
-  height: 100%;
+}
+
+div#slide1 {
+    height: 100%;
 }
 
 div#slide1 > div {
@@ -413,4 +416,43 @@ footer img.social-network {
   width: 4.8rem;
   margin: 1.4rem;
   line-height: 7.6rem;
+}
+
+
+/***********
+ * PRIVACY *
+ ***********/
+
+body.privacy > div {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.6rem;
+  color: #270707;
+
+}
+
+body.privacy h1 {
+  margin-top: 6rem;
+  font-size: 4.5rem;
+  font-weight: 400;
+}
+
+body.privacy h2 {
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+body.privacy a {
+  color: #666;
+  text-decoration: none;
+}
+
+body.privacy a:hover, body.privacy a:focus {
+  border-bottom: 1px dotted #666;
+}
+
+body.privacy div.contact-info {
+  margin-left: 2rem;
 }
