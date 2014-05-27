@@ -217,6 +217,7 @@ div#slide3 h1 {
 
 div#slide3 div#analytics {
   margin-left: 9rem;
+  margin-right: 20%;
 }
 
 div#slide3 h2 {
@@ -224,7 +225,6 @@ div#slide3 h2 {
   color: #ffffff;
   font-weight: 300;
   margin-bottom: 0;
-  width: 70%;
 }
 
 div#slide3 p {
@@ -233,7 +233,6 @@ div#slide3 p {
   font-size: 2.34rem;
   color: #ffffff;
   margin-bottom: 5rem;
-  width: 70%;
 }
 
 div#slide3 label {
@@ -267,8 +266,8 @@ div#slide3 button {
 div#slide3 img#corbatin {
   position: absolute;
   top: 0;
-  right: 5rem;
-  height: 46%;
+  right: 3%;
+  width: 16%;
 }
 
 div#slide3 img#monitor {
@@ -411,6 +410,14 @@ footer {
 footer span {
   line-height: 7.6rem;
   margin-left: 1.4rem;
+}
+
+footer a.contact {
+  color: #999999;
+  line-height: 7.6rem;
+  text-decoration: none;
+  float: right;
+  margin-right: 1.4rem;
 }
 
 footer img.social-network {
