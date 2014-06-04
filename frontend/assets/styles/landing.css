@@ -143,6 +143,7 @@ div#slide2 {
   font-weight: thin;
   padding-top: 7rem;
   padding-bottom: 4rem;
+  overflow-x: hidden;
 }
 
 div#slide2 > div{
