@@ -5,17 +5,17 @@ $(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://api.moodsy.me/subscribers/signup",
+        url: "http://wapi.moodsy.me/subscribers/signup",
         data: {
             "email": $('#email').val()
         },
         success: function() {
-            // console.log("sucess");
+            console.log("Submission successful.");
             $('#dev-subscribe').html('Thank You!');
             $('#dev-subscribe').removeClass('disabled');
         },
         error: function() {
-            // console.error("Submission failure");
+            console.error("Submission failure!");
         }
         // TODO: What about errors?
     });
