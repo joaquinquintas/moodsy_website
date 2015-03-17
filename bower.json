@@ -1,0 +1,22 @@
+{
+  "name": "moodsy-website",
+  "version": "2.0.0",
+  "authors": [
+    "Hugo Osvaldo Barrera <hugo@barrera.io>"
+  ],
+  "description": "The public website for Moodsy",
+  "keywords": [
+    "moodsy"
+  ],
+  "license": "Propietary",
+  "homepage": "https://moodsy.me",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "underscore": "~1.7.0"
+  }
+}

@@ -1,0 +1,169 @@
+$content-width: 980px;
+
+html, body {
+  height: 100%
+}
+
+body {
+  background-image: url('/images/bg-test.jpeg');
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  position: relative;
+  max-width: $content-width;
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: hidden;
+}
+
+header, section, footer > #content {
+  max-width: $content-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 60px;
+  padding-top: 45px;
+
+  h1, h2{
+    text-transform: uppercase; 
+    text-align: center;
+    color: white;
+  }
+
+  h1{
+    font-weight: bold;
+    font-size: 66px;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  h2{
+    font-weight: normal; 
+    font-size: 20px;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    display: inline-block;
+    padding: 4px 28px 6px;
+    margin-top: 3px;
+  }
+}
+
+#text {
+  font-size: 50px;
+  color: white;
+  width: 470px;
+}
+
+#stores {
+  padding-top: 100px;
+}
+
+@media (min-width: 1000px) {
+  #iphones {
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+  }
+}
+
+@media (max-width: 999px) {
+  #text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #stores {
+    text-align: center;
+  }
+
+  #iphones {
+    margin-top: 60px;
+    text-align: center;
+  } 
+}
+
+footer {
+  background-color: white;
+  width: 100%;
+  min-height: 40px;
+  padding: 20px 0 14px;
+
+  position: relative;
+  z-index: 10;
+
+  @media (min-width: 1000px) {
+    position: absolute;
+    bottom: 0;
+    width: 3000px;
+    margin-left: -1050px;
+  }
+
+  #content {
+    position: relative;
+  }
+
+  $line-height: 34px;
+  $text-colour: #271400;
+
+  span {
+    color: $text-colour;
+    display: block;
+  }
+
+  a {
+    color: $text-colour;
+    text-decoration: none;
+  }
+
+  @media(max-width: 863px) {
+    span {
+      text-align: center;
+      padding: 5px 0;
+    }
+  }
+
+  #social {
+    text-align: center;
+    
+    img:nth-child(n+2) {
+      margin-left: 6px;
+    }
+  }
+
+  #links {
+    a {
+      padding: 0 6px;
+    }
+
+    a:nth-child(n+2) {
+      border-left: 1px solid $text-colour;
+    }
+  }
+
+  @media(min-width: 864px) {
+    span {
+      position: absolute;
+    }
+
+    #copyright {
+      line-height: $line-height;
+      left: 0;
+      top: 0;
+    }
+
+    #social {
+      left: 33%;
+      width: 33%;
+    }
+
+    #links {
+      line-height: $line-height;
+      right: 0;
+      text-align: right;
+    }
+  }
+}

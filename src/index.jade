@@ -1,0 +1,49 @@
+doctype html
+html(class='no-js')
+  head
+    meta(charset='utf-8')
+
+    title Moodsy
+
+    meta(name='description', content='Easy and fun way to share your emotions!')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(href='/landing.css', rel='stylesheet')
+    // TODO: Remove unused font-weights
+    link(href='http://fonts.googleapis.com/css?family=Lato:400,300,700,900',
+    rel='stylesheet')
+
+  body
+    header
+      h1 Moodsy
+      h2 Share your emotions
+
+    section
+      div#text
+        | A fast, beautiful & fun way to 
+        b share
+        |  and 
+        b track
+        |  your emotions
+
+      div#stores
+        img(src='/images/app-store.png')
+        img(src='/images/google-play.png')
+
+      div#iphones
+        img(src='/images/phone-excited.png')
+
+    footer
+      div#content
+        span#social
+          img(src='/images/facebook.png')
+          img(src='/images/twitter.png')
+          img(src='/images/pinterest.png')
+          img(src='/images/instagram.png')
+        span#links
+          a(href='/privacy') Privacy
+          a(href='/press') Privacy
+          a(href='http://developers.moodsy.me') Developers
+          a(href='/privacy') Web Widget
+        span#copyright
+          | © 2015 Moodsy All Rights Reserved
+        div(style='clear:both;')

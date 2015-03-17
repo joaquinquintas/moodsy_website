@@ -1,0 +1,22 @@
+{
+  "name": "moodsy-website",
+  "version": "2.0.0",
+  "description": "The public website for Moodsy",
+  "author": "Hugo Osvaldo Barrera <hugo@barrera.io>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jquintas/moodsy_website.git"
+  },
+  "dependencies": {
+    "grunt": "0.4.xx",
+    "grunt-contrib-coffee": "0.13.x",
+    "grunt-contrib-copy": "0.7.x",
+    "grunt-contrib-clean": "0.6.x",
+    "grunt-contrib-watch": "0.6.x",
+    "grunt-contrib-jade": "0.14.x",
+    "grunt-contrib-connect": "0.9.x",
+    "grunt-bowercopy": "1.1.x",
+    "load-grunt-tasks": "^0.6.0",
+    "grunt-contrib-sass": "^0.8.1"
+  }
+}
