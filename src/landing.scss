@@ -6,7 +6,7 @@ html, body {
 }
 
 body {
-  background-image: url('/images/bg-test0.jpeg');
+  background-image: url('/images/backgrounds/0.jpeg');
   background-attachment: fixed;
   background-size: cover;
   font-family: 'Lato', sans-serif;
@@ -31,6 +31,7 @@ header {
   padding-top: 45px;
 
   h1, h2{
+    text-shadow: #ccc 0 0 132px;
     text-transform: uppercase; 
     text-align: center;
     color: white;

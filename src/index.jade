@@ -16,8 +16,8 @@ html
   body(onload="changeBg()")
     script.
       function changeBg() {
-        var i = Math.floor(Math.random() * 2.99)
-        document.body.style.backgroundImage = 'url(/images/bg-test' + i + '.jpeg)'
+        var i = Math.floor(Math.random() * 3.99)
+        document.body.style.backgroundImage = 'url(/images/backgrounds/' + i + '.jpeg)'
       }
     div#container
       header
@@ -49,7 +49,7 @@ html
           span#links
             a(href='/privacy') Privacy
             a(href='/press') Privacy
-            a(href='http://developers.moodsy.me') Developers
+            a(href='http://developers.moodsy.me') API
             a(href='/privacy') Web Widget
           span#copyright
             | © 2015 Moodsy All Rights Reserved
