@@ -138,7 +138,7 @@ footer {
   #social {
     text-align: center;
     
-    img:nth-child(n+2) {
+    > *:nth-child(n+2) {
       margin-left: 6px;
     }
   }
