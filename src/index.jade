@@ -18,6 +18,7 @@ html
       function changeBg() {
         var i = Math.floor(Math.random() * 3.99)
         document.body.style.backgroundImage = 'url(/images/backgrounds/' + i + '.jpeg)'
+        document.getElementById("iphone").src = '/images/iphones/' + i + '.png'
       }
     div#container
       header
@@ -33,11 +34,12 @@ html
           |  your emotions
 
         div#stores
-          img(src='/images/app-store.png')
+          a(href='http://itunes.com/apps/Moodsy')
+            img(src='/images/app-store.png')
           img(src='/images/google-play.png')
 
         div#iphones
-          img(src='/images/phone-excited.png')
+          img(src='/images/iphones/0.png', id='iphone')
 
       footer
         div#content
