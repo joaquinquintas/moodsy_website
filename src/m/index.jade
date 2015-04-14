@@ -1,0 +1,69 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+
+    title Moodsy
+
+    meta(name='description', content='Easy and fun way to share your emotions!')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    link(href='/mood.css', rel='stylesheet')
+    // TODO: Remove unused font-weights
+    link(href='http://fonts.googleapis.com/css?family=Lato:400,300,700,900',
+    rel='stylesheet')
+
+    script(src='/moment.js')
+
+  body
+    header
+      div#content
+        h1 Moodsy
+        div#home
+          a(href="/")
+            img(src="/images/home.png")
+        div#get-app
+          a(href="http://itunes.com/apps/Moodsy") Get the App!
+    section#main
+      div#mood
+      div#sidebar
+        div#status
+          div.avatar
+            img
+          div#description
+            div.name Bob Smart
+            date 2 months ago
+            label.text 
+              | John said he's sad. Boo Hoo. He really likes to cry, cause he
+              | can't cope with life. He's a really big loser.
+          div.group
+        div#likes
+          img(src='/images/like.png')
+          p By: 
+            a(href="/app") John Doe
+            |  and 
+            a(href="/app") Peter
+        div#comments
+          div.comment
+            div.avatar
+              img
+            div.author
+              a(href="/app") Monica
+            div.text
+              | Please use coasters..
+          div.group
+          div.comment
+            div.avatar
+              img
+            div.author
+              a(href="/app") Larry
+            div.text
+              | You don't respect the wood.
+        div#reply
+          a#like
+            img(src='/images/like.png')
+          input(type='text')
+
+
+
+    include ../includes/footer.jade

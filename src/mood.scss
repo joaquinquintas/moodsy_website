@@ -1,0 +1,236 @@
+$content-width: 1024px;
+
+$black: #2e1617;
+$light-grey: #ddd;
+$link: #1dc4e2;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #fbfbfb;
+  font-family: 'Lato', sans-serif;
+}
+
+header, footer {
+  box-shadow: 0 0 4px #ccc;
+}
+
+header {
+  $height: 36px;
+  width: 100%;
+  background-color: white;
+  padding: 6px 0;
+  margin-bottom: 20px;
+
+  div#content {
+    width: $content-width;
+    margin: 0px auto;
+    position: relative;
+  }
+
+  h1 {
+    color: $black;
+    font-weight: bold;
+    font-size: 28px;
+    text-transform: uppercase;
+    line-height: $height;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  div#home, div#get-app {
+    position: absolute;
+    top: 0;
+    line-height: $height;
+    border-left: solid 1px $light-grey;
+    border-right: solid 1px $light-grey;
+    padding: 0 12px;
+  }
+
+  div#home {
+    left: 0;
+
+    img {
+      vertical-align: middle;
+    }
+  }
+
+  div#get-app {
+    right: 0;
+
+    a {
+      font-weight: bold;
+      color: $link;
+      text-decoration: none;
+    }
+  }
+}
+
+section#main {
+  width: $content-width;
+  border-radius: 5px;
+  background-color: white;
+  border: solid 1px $light-grey;
+  margin: 0 auto;
+  position: relative;
+  height: 640px;
+  overflow: hidden;
+
+  a {
+    color: $link;
+    text-decoration: none;
+  }
+
+  div#mood{
+    background-image: url('http://static.moodsy.me/profile.png');
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #eee;
+    width: 640px;
+    height: 640px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  div.avatar {
+    background-image: url('http://static.moodsy.me/profile.png');
+    background-size: cover;
+    display: inline-block;
+  }
+
+  div#sidebar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 384px;
+    height: 640px;
+  }
+
+  div#status {
+    div.avatar {
+      width: 40px;
+      height: 40px;
+    }
+
+    div#description {
+      padding: 0 0 10px 0;
+      width: 334px;
+      float: right;
+    }
+
+    div.name {
+      font-size: 22px;
+    }
+
+    label.text {
+      padding-right: 20px;
+    }
+
+    date {
+      color: $light-grey;
+      display: block;
+      font-size: 14px;
+    }
+  }
+
+  div#comments {
+    background-color: #fdfdfd;
+    height: 3000px;
+    overflow-x: auto;
+    // comments have margin-top:
+    padding-top: 0 !important;
+
+    div.comment {
+      position: relative;
+      margin-top: 10px;
+    }
+
+    div.author, div.text {
+      width: 342px;
+      float: right;
+    }
+
+    div.text {
+      margin-top: -20px;
+    }
+
+    div.avatar {
+      margin-top: 5px;
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  div#status, div#likes, div#comments, div#reply {
+    padding: 10px;
+    border-bottom: 1px solid $light-grey;
+    width: 100%;
+  }
+
+  div#likes {
+    margin-top: 1px;
+
+    img {
+      vertical-align: top;
+      margin-top: 5px;
+    }
+
+    p {
+      display: inline-block;
+      width: 334px;
+      padding-left: 10px;
+      margin-top: 0px;
+    }
+  }
+
+  div#reply {
+    position: absolute;
+    bottom: 0;
+    border-top: 1px solid $light-grey;
+
+    a#like {
+      border: 1px solid $light-grey;
+      border-radius: 6px;
+      display: inline-block;
+      padding: 6px 13px 3px;
+      margin-right: 6px;
+      vertical-align: top;
+    }
+
+    input {
+      height: 28px;
+      width: 309px;
+      border: 1px solid $light-grey;
+      border-radius: 6px;
+    }
+
+    * {
+      cursor: pointer;
+    }
+  }
+}
+
+@import 'footer';
+
+footer {
+  width: 100%;
+  margin-top: 20px;
+}
+
+footer #content {
+  width: $content-width;
+  margin: 0 auto;
+}
+
+.group {
+  clear: both;
+}
+
+@media(min-height: 705px) {
+  footer {
+    position: fixed;
+    bottom: 0;
+  }
+}

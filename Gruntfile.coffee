@@ -70,7 +70,7 @@ module.exports = (grunt) ->
           destPrefix: "build"
 
         files:
-          "underscore.js": "underscore/underscore.js"
+          "moment.js": "moment/min/moment.min.js"
     sass:
       dist:
         files: [

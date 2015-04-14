@@ -41,22 +41,4 @@ html
         div#iphones
           img(src='/images/iphones/0.png', id='iphone')
 
-      footer
-        div#content
-          span#social
-            a(href='https://www.facebook.com/moodsy.official')
-              img(src='/images/facebook.png')
-            a(href='https://twitter.com/MoodsyOfficial')
-              img(src='/images/twitter.png')
-            a(href='#')
-              img(src='/images/pinterest.png')
-            a(href='https://instagram.com/moodsy/')
-              img(src='/images/instagram.png')
-          span#links
-            a(href='/privacy') Privacy
-            a(href='/press') Press
-            a(href='http://developers.moodsy.me') API
-            a(href='/privacy') Web Widget
-          span#copyright
-            | © 2015 Moodsy All Rights Reserved
-        div(style='clear:both;')
+      include ./includes/footer.jade
