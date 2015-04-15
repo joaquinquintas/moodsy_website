@@ -26,4 +26,12 @@ Please make sure you restore this before committing.
 
 A better framework will be devised in future.
 
+Deploying
+---------
+
+Deploying requires special web server configuration. The server should serve
+`/m/base/` for any request matching `/m/.{10}`. `/app` should also forward to
+the download page for the application. User-Agent sniffing can be done once we
+have support for multiple platforms.
+
 Copyright © 2015, Moodsy LLC <contact@moodsy.me>
