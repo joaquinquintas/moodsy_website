@@ -14,6 +14,7 @@ html
     rel='stylesheet')
 
     script(src='/moment.js')
+    script(src='/mood.js')
 
   body
     header
@@ -23,9 +24,10 @@ html
           a(href="/")
             img(src="/images/home.png")
         div#get-app
-          a(href="http://itunes.com/apps/Moodsy") Get the App!
+          a(href="/app") Get the App!
     section#main
       div#mood
+        img
       div#sidebar
         div#status
           div.avatar
@@ -39,12 +41,9 @@ html
           div.group
         div#likes
           img(src='/images/like.png')
-          p By: 
-            a(href="/app") John Doe
-            |  and 
-            a(href="/app") Peter
+          p
         div#comments
-          div.comment
+          div.comment(style='display: none;')
             div.avatar
               img
             div.author
@@ -52,18 +51,9 @@ html
             div.text
               | Please use coasters..
           div.group
-          div.comment
-            div.avatar
-              img
-            div.author
-              a(href="/app") Larry
-            div.text
-              | You don't respect the wood.
         div#reply
-          a#like
+          a#like(href='/app')
             img(src='/images/like.png')
-          input(type='text')
+          input(type='text', onclick='location.href="/app"')
 
-
-
-    include ../includes/footer.jade
+    include ../../includes/footer.jade

@@ -109,9 +109,10 @@ section#main {
   }
 
   div#status {
-    div.avatar {
+    div.avatar, div.avatar img {
       width: 40px;
       height: 40px;
+      border-radius: 20px;
     }
 
     div#description {
@@ -148,18 +149,26 @@ section#main {
     }
 
     div.author, div.text {
-      width: 342px;
       float: right;
+    }
+
+    div.author {
+      width: 342px;
     }
 
     div.text {
       margin-top: -20px;
+      width: 322px;
+      padding-right: 20px;
     }
 
     div.avatar {
       margin-top: 5px;
-      width: 32px;
-      height: 32px;
+      &, & img {
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+      }
     }
   }
 
