@@ -63,7 +63,6 @@ injectData = (data) ->
 
   if last
     appendHeart(last, heartParent)
-    heartParent.insertBefore(document.createTextNode('By: '), heartParent.firstChild)
   else
     heartParent.appendChild(document.createTextNode('No one.'))
 
