@@ -6,7 +6,7 @@ getIdFromUrl = () ->
   return last
 
 fetchMoodData = (id) ->
-  url = "http://dev.moodsy.me/2/public/post/" + id + "/"
+  url = "http://api.moodsy.me/2/public/post/" + id + "/"
   req = new XMLHttpRequest()
   req.open('GET', url, true)
 
