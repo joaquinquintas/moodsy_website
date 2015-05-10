@@ -5,11 +5,20 @@ html
 
     title Moodsy
 
+    meta(property='og:title', content='Moodsy')
+    meta(property='og:type', content='website')
+    meta(property='og:url', content='http://moodsy.me/')
+    meta(property='og:image', content=', http://internal.moodsy.me/facebook_invite.jpg')
+    meta(property='og:description', content='Easy and fun way to share your emotions!')
+
+    meta(property='al:ios:url', content='moodsy://')
+    meta(property='al:ios:app_store_id', content='804256702')
+    meta(property='al:ios:app_name', content='Moodsy')
+
     meta(name='description', content='Easy and fun way to share your emotions!')
     meta(name='viewport', content='width=device-width, initial-scale=1')
 
     link(href='/static/landing.css', rel='stylesheet')
-    // TODO: Remove unused font-weights
     link(href='http://fonts.googleapis.com/css?family=Lato:400,700', rel='stylesheet')
 
     body(style="background-image: url('/static/images/backgrounds/{{ number }}.jpeg');")
