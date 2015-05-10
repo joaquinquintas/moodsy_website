@@ -1,0 +1,61 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+
+    title Moodsy
+
+    meta(name='description', content='Easy and fun way to share your emotions!')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    link(href='/static/mood.css', rel='stylesheet')
+    // TODO: Remove unused font-weights
+    link(href='http://fonts.googleapis.com/css?family=Lato:400,700', rel='stylesheet')
+
+  body
+    header
+      div#content
+        h1 Moodsy
+        div#home
+          a(href="/")
+            img(src="/static/images/home.png")
+        div#get-app
+          a(href="/app") Get the App!
+    section#main
+      div#mood
+        img(src="{{ mood['post']['image_url'] }}")
+      div#sidebar
+        div#status
+          div.avatar
+            img(src="{{ mood['profile']['profile_img'] }}")
+          div#description
+            div.name {{ mood['profile']['name'] }}
+            date(datetime="{{ mood['post']['datetime'] }}",
+                 title="{{ mood['post']['datetime'] }}")
+              | {{ mood['post']['moment'] }}
+            label.text {{ mood['post']['description']['text'] }}
+          div.group
+        div#likes
+          img(src='/static/images/like.png')
+          p
+            | {% if mood['moodsies']['total'] == 0 %}
+            |   No one
+            | {% else %}
+            |   {{ ", ".join(moodsies) }}
+            | {% end if %}
+        div#comments
+          | {% for comment in mood['comments']['comments'] %}
+          div.comment
+            div.avatar
+              img(src="{{ comment['profile_img'] }}")
+            div.author
+              a(href="/app") {{ comment['user_fname'] }}
+            div.text {{ comment['text'] }}
+          | {% end for %}
+          div.group
+        div#reply
+          a#like(href='/app')
+            img(src='/static/images/like.png')
+          input(type='text', onclick='location.href="/app"')
+
+    include includes/footer.jade

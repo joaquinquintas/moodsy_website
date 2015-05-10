@@ -8,18 +8,11 @@ html
     meta(name='description', content='Easy and fun way to share your emotions!')
     meta(name='viewport', content='width=device-width, initial-scale=1')
 
-    link(href='/landing.css', rel='stylesheet')
+    link(href='/static/landing.css', rel='stylesheet')
     // TODO: Remove unused font-weights
-    link(href='http://fonts.googleapis.com/css?family=Lato:400,300,700,900',
-    rel='stylesheet')
+    link(href='http://fonts.googleapis.com/css?family=Lato:400,700', rel='stylesheet')
 
-  body(onload="changeBg()")
-    script.
-      function changeBg() {
-        var i = Math.floor(Math.random() * 3.99)
-        document.body.style.backgroundImage = 'url(/images/backgrounds/' + i + '.jpeg)'
-        document.getElementById("iphone").src = '/images/iphones/' + i + '.png'
-      }
+    body(style="background-image: url('/static/images/backgrounds/{{ number }}.jpeg');")
     div#container
       header
         h1 Moodsy
@@ -35,11 +28,11 @@ html
 
         div#stores
           a(href='http://itunes.com/apps/Moodsy')
-            img(src='/images/app-store.png')
-          a(href='#', style='display: none')
-            img(src='/images/google-play.png')
+            img(src='/static/images/app-store.png')
+          a(href='#', style='display: none;')
+            img(src='/static/images/google-play.png')
 
         div#iphones
-          img(src='/images/iphones/0.png', id='iphone')
+          img(src='/static/images/iphones/{{ number }}.png', id='iphone')
 
       include ./includes/footer.jade

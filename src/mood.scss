@@ -129,7 +129,7 @@ section#main {
       padding-right: 20px;
     }
 
-    date {
+    date, time {
       color: $light-grey;
       display: block;
       font-size: 14px;
@@ -182,8 +182,7 @@ section#main {
     margin-top: 1px;
 
     img {
-      vertical-align: top;
-      margin-top: 5px;
+      vertical-align: middle;
     }
 
     p {
