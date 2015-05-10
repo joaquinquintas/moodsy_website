@@ -20,9 +20,9 @@ STATIC_PATH = os.path.join(SOURCE_PATH, 'build', 'static')
 thread_pool = ThreadPoolExecutor(8)
 
 
-class MainPageHandler(RequestHandler):
+class HomePageHandler(RequestHandler):
 
-    template = os.path.join(TEMPLATE_PATH, 'index.html')
+    template = os.path.join(TEMPLATE_PATH, 'home.html')
 
     def get(self):
         number = random.randint(0, 3)
@@ -58,7 +58,7 @@ class MoodPageHandler(RequestHandler):
 
 application = Application([
     url(r'/static/(.*)', tornado.web.StaticFileHandler, {'path': STATIC_PATH}),
-    url(r"/?", MainPageHandler, name='main'),
+    url(r"/?", HomePageHandler, name='home'),
     url(r"/m/(.{10})/?", MoodPageHandler, name='mood'),
 ], debug=True)
 
