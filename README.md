@@ -2,36 +2,45 @@ Moodsy website
 ==============
 
 This is the website for moodsy.me.
-To set up a dev environment, run:
+
+Development is split in two:
+
+Templates and CSS files are generated at development/deployment time from jade
+and SCSS files.
+
+These templates are used at runtime by tornado to serve pages to users.
+
+Development
+-----------
+
+To set up a development environment, run:
 
     npm install
+    virtualenv env
 
-To build the website run:
+To build the website, run:
 
     grunt build
 
-If you want to serve changes locally and automatically recompile/update file
-when they're modified run:
+To serve the website, run
+
+    python moodsy_www/main.py
+
+If you intend to alter the templates while testing locally, you should run
+tornado, and then run grunt in serve mode, so it automatically recompiles and
+updates files as you modify them:
 
     grunt serve
 
-Testing /m/SHORT_ID
--------------------
-
-Since this page runs a script that fetches data based on it's URL, testing is
-non-trivial. You'll have to move/copy `/m/base` to `/m/WPCFZAM6QB` (for
-example), and then use that one for testing.
-
-Please make sure you restore this before committing.
-
-A better framework will be devised in future.
+Make sure tornado is running in development mode so that it picks up any
+changes to python code.
 
 Deploying
 ---------
 
-Deploying requires special web server configuration. The server should serve
-`/m/base/` for any request matching `/m/.{10}`. `/app` should also forward to
-the download page for the application. User-Agent sniffing can be done once we
-have support for multiple platforms.
+Deploying requires running `grunt build` and uploading the build static files
+plus the tornado application.
+You'll need to set up the virtualenv on the production server, though you will
+not need npm or grunt.
 
 Copyright © 2015, Moodsy LLC <contact@moodsy.me>
