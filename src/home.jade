@@ -27,7 +27,7 @@ html
     link(href='/static/landing.css', rel='stylesheet')
     link(href='http://fonts.googleapis.com/css?family=Lato:400,700', rel='stylesheet')
 
-    body(style="background-image: url('/static/images/backgrounds/{{ number }}.jpeg');")
+  body(style="background-image: url('/static/images/backgrounds/{{ number }}.jpeg');")
     div#container
       header
         h1 Moodsy
@@ -43,11 +43,11 @@ html
 
         div#stores
           a(href='http://itunes.com/apps/Moodsy')
-            img(src='/static/images/app-store.png')
-          a(href='#', style='display: none;')
-            img(src='/static/images/google-play.png')
+            img(src='/static/images/app-store.png', alt='Download on the App Store')
+          // a(href='#')
+          //   img(src='/static/images/google-play.png', alt='Get it on Google Play')
 
         div#iphones
-          img(src='/static/images/iphones/{{ number }}.png', id='iphone')
+          img(src='/static/images/iphones/{{ number }}.png', id='iphone', alt="Share your emotions!")
 
       include ./includes/footer.jade
