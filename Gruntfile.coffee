@@ -61,19 +61,19 @@ module.exports = (grunt) ->
           src: 'build/static/'
           dest: '/var/www/python/moodsy.me/static/'
           host: 'root@moodsy.me'  # FIXME: not-root!
-          delete:true
+          delete: true
       templates:
         options:
           src: 'build/'  # FIXME: build/templates
           dest: '/var/www/python/moodsy.me/templates/'
           host: 'root@moodsy.me'
-          delete:true
+          delete: true
       python:
         options:
           src: 'moodsy_www/'
           dest: '/var/www/python/moodsy.me/moodsy_www/'
           host: 'root@moodsy.me'
-          delete:true
+          delete: false
 
 
 
