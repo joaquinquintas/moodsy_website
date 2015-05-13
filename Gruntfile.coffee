@@ -53,6 +53,29 @@ module.exports = (grunt) ->
           ext: ".css"
         ]
 
+    rsync:
+      options:
+        recursive: true
+      static:
+        options:
+          src: 'build/static/'
+          dest: '/var/www/python/moodsy.me/static/'
+          host: 'root@moodsy.me'  # FIXME: not-root!
+          delete:true
+      templates:
+        options:
+          src: 'build/'  # FIXME: build/templates
+          dest: '/var/www/python/moodsy.me/templates/'
+          host: 'root@moodsy.me'
+          delete:true
+      python:
+        options:
+          src: 'moodsy_www/'
+          dest: '/var/www/python/moodsy.me/moodsy_www/'
+          host: 'root@moodsy.me'
+          delete:true
+
+
 
   #load tasks
   require("load-grunt-tasks") grunt
@@ -67,4 +90,10 @@ module.exports = (grunt) ->
   grunt.registerTask "serve", "Serve locally and update file on change.", [
     "build"
     "watch"
+  ]
+  grunt.registerTask "deploy", "Deploy all files to production", [
+    "build"
+    "rsync:templates"
+    "rsync:static"
+    "rsync:python"
   ]
