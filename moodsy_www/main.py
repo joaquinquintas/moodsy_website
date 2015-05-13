@@ -1,28 +1,39 @@
+#!/usr/bin/env python3
+
 import os
 import random
 from concurrent.futures import ThreadPoolExecutor
 
 import arrow
+from envsettings import SettingsReader
 import requests
-import tornado.ioloop
-from tornado.web import RequestHandler, Application, url
 from tornado.gen import coroutine
+from tornado.httpserver import HTTPServer
+from tornado.ioloop import IOLoop
+from tornado.netutil import bind_unix_socket
+from tornado.process import fork_processes
+from tornado.web import RequestHandler, Application, url, StaticFileHandler
 
-# TODO: These will have to be configurable.
-PORT = 5000
-MOOD_ENDPOINT = 'http://api.moodsy.me/2/public/post/{mood_id}/'
-SOURCE_PATH = os.path.dirname(os.path.abspath(__name__))
-TEMPLATE_PATH = os.path.join(SOURCE_PATH, 'build')
-STATIC_PATH = os.path.join(SOURCE_PATH, 'build', 'static')
 
-# We'll use a thread pool to handle up to four requests *per instance* at a
-# time.
+settings = SettingsReader([
+    ("MOODSY_WWW_TEMPLATE_PATH", "template_path", str),
+    ("MOODSY_WWW_STATIC_PATH", "static_path", str),
+    ("MOODSY_WWW_DEBUG_PORT", "debug_port", int, None),
+    ("MOODSY_WWW_SOCKET", "socket", str, None),
+])
+
+if not settings.socket and not settings.debug_port:
+    raise Exception('No debug port nor socket defined.')
+
+settings.debug = settings.debug_port is not None
+settings.moods_api = 'http://api.moodsy.me/2/public/post/{mood_id}/'
+
 thread_pool = ThreadPoolExecutor(8)
 
 
 class HomePageHandler(RequestHandler):
 
-    template = os.path.join(TEMPLATE_PATH, 'home.html')
+    template = os.path.join(settings.template_path, 'home.html')
 
     def get(self):
         number = random.randint(0, 3)
@@ -31,10 +42,10 @@ class HomePageHandler(RequestHandler):
 
 class MoodPageHandler(RequestHandler):
 
-    template = os.path.join(TEMPLATE_PATH, 'mood.html')
+    template = os.path.join(settings.template_path, 'mood.html')
 
     def async_get(self, mood_id):
-        url = MOOD_ENDPOINT.format(mood_id=mood_id)
+        url = settings.moods_api.format(mood_id=mood_id)
         resp = requests.get(url)
         if resp.status_code != 200:
             # TODO: We need a design for the 404 page.
@@ -57,12 +68,20 @@ class MoodPageHandler(RequestHandler):
 
 
 application = Application([
-    url(r'/static/(.*)', tornado.web.StaticFileHandler, {'path': STATIC_PATH}),
+    url(r'/static/(.*)', StaticFileHandler, {'path': settings.static_path}),
     url(r"/?", HomePageHandler, name='home'),
     url(r"/m/(.{10})/?", MoodPageHandler, name='mood'),
-], debug=True)
+], debug=settings.debug)
 
 if '__main__' == __name__:
-    print('Starting server on {}'.format(PORT))
-    application.listen(PORT)
-    tornado.ioloop.IOLoop.instance().start()
+    if settings.debug:
+        print('Starting debug server on {}'.format(settings.debug_port))
+        application.listen(settings.debug_port)
+        IOLoop.instance().start()
+    else:
+        print('Starting production server.')
+        socket = bind_unix_socket(settings.socket, mode=0o777)
+        fork_processes(None)
+        server = HTTPServer(application)
+        server.add_socket(socket)
+        IOLoop.instance().start()
