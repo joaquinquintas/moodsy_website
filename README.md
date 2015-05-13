@@ -9,8 +9,8 @@ Development is split in two:
    and SCSS files. These files are contained in `src/`.
 
  * These templates are used at runtime by [tornado][tornado] to serve pages to
-   users. Tornado and the rest of the python code is in `moodsy_www`. All of
-   the python code is `python2` and `python3` compatible.
+   users. Tornado and the rest of the python code is in `moodsy_www`. This
+   application only works with python3 (and has been tested with python3.4).
 
 [tornado]: http://www.tornadoweb.org/
 
@@ -18,7 +18,7 @@ Development
 -----------
 
 You'll need to install [iojs][iojs] (or [nodejs][nodejs]), [npm][npm],
-[grunt-cli][grunt-cli] and [python][python] (either 2.7 or 3.4).
+[grunt-cli][grunt-cli] and [python][python].
 
 To set up a development environment, run:
 
