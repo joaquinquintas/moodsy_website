@@ -5,7 +5,17 @@ html
 
     title Moodsy
 
-    meta(name='description', content='Easy and fun way to share your emotions!')
+    meta(name='twitter:app:country', content='US')
+    meta(name='twitter:app:name:iphone', content='Moodsy - Express Yourself')
+    meta(name='twitter:app:id:iphone', content='804256702')
+    meta(name='twitter:app:url:iphone', content='moodsy://')
+    meta(name='twitter:url', content='http://moodsy.me/m/{{mood["short_id"]}}')
+    meta(name='twitter:image', content='{{ mood['post']['image_url'] }}')
+    meta(name='twitter:card', content='photo')
+    meta(name='twitter:site', content='@MoodsyOfficial')
+    meta(name='twitter:title', content='{{ mood['post']['description']['text'] }}')
+    
+    meta(name='description', content='Easy and fun way to share your Emotions!')
     meta(name='viewport', content='width=device-width, initial-scale=1')
 
     link(href='/static/mood.css', rel='stylesheet')
