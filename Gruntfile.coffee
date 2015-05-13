@@ -8,12 +8,12 @@ module.exports = (grunt) ->
           "!**/*.scss"
           "!**/*.jade"
         ]
-        dest: "build/static"
+        dest: "static"
         expand: true
 
     clean:
       build:
-        src: ["build"]
+        src: ["templates", "static"]
 
     jade:
       compile:
@@ -24,7 +24,7 @@ module.exports = (grunt) ->
           expand: true
           cwd: "src"
           src: ["**/*.jade"]
-          dest: "build"
+          dest: "templates"
           ext: ".html"
         ]
 
@@ -41,6 +41,7 @@ module.exports = (grunt) ->
         files: [
           "src/**"
           "!src/**/*.jade"
+          "!src/**/*.scss"
         ]
 
     sass:
@@ -49,7 +50,7 @@ module.exports = (grunt) ->
           expand: true
           cwd: "src"
           src: ["**/*.scss"]
-          dest: "build/static"
+          dest: "static"
           ext: ".css"
         ]
 
@@ -58,13 +59,13 @@ module.exports = (grunt) ->
         recursive: true
       static:
         options:
-          src: 'build/static/'
+          src: 'static/'
           dest: '/var/www/python/moodsy.me/static/'
           host: 'root@moodsy.me'  # FIXME: not-root!
           delete: true
       templates:
         options:
-          src: 'build/'  # FIXME: build/templates
+          src: 'templates/'
           dest: '/var/www/python/moodsy.me/templates/'
           host: 'root@moodsy.me'
           delete: true
