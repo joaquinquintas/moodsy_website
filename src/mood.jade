@@ -16,7 +16,7 @@ html
     {% if mood['post']['description']['text'] %}
     meta(name='twitter:title', content="{{ mood['post']['description']['text'] }}")
     {% else %}
-    meta(name='twitter:title', content="{{ mood['profile']['name']}} is feeling {{ mood['post']['id']}}")
+    meta(name='twitter:title', content="{{ mood['profile']['name']}} is feeling {{ mood['post']['mood']['id']}}")
     {% end %}
     
     meta(name='description', content='Easy and fun way to share your Emotions!')
