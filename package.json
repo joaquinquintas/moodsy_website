@@ -20,5 +20,8 @@
     "grunt-deploy": "^0.1.7",
     "grunt-rsync": "^0.6.2",
     "load-grunt-tasks": "^0.6.0"
+  },
+  "devDependencies": {
+    "load-grunt-tasks": "^0.6.0"
   }
 }
