@@ -13,7 +13,11 @@ html
     meta(name='twitter:image', content="{{ mood['post']['image_url'] }}")
     meta(name='twitter:card', content='photo')
     meta(name='twitter:site', content='@MoodsyOfficial')
+    {% if mood['post']['description']['text'] %}
     meta(name='twitter:title', content="{{ mood['post']['description']['text'] }}")
+    {% else %}
+    meta(name='twitter:title', content="{{ mood['profile']['name']}} is feeling {{ mood['post']['id']}}")
+    {% end %}
     
     meta(name='description', content='Easy and fun way to share your Emotions!')
     meta(name='viewport', content='width=device-width, initial-scale=1')
