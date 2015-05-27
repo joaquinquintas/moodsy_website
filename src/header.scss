@@ -1,0 +1,61 @@
+$content-width: 1024px;
+
+$black: #2e1617;
+$light-grey: #ddd;
+$link: #1dc4e2;
+
+header {
+  // Same as footer
+  box-shadow: 0 0 4px #ccc;
+}
+
+header {
+  $height: 36px;
+  width: 100%;
+  background-color: white;
+  padding: 6px 0;
+  margin-bottom: 20px;
+
+  div#content {
+    width: $content-width;
+    margin: 0px auto;
+    position: relative;
+  }
+
+  h1 {
+    color: $black;
+    font-weight: bold;
+    font-size: 28px;
+    text-transform: uppercase;
+    line-height: $height;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  div#home, div#get-app {
+    position: absolute;
+    top: 0;
+    line-height: $height;
+    border-left: solid 1px $light-grey;
+    border-right: solid 1px $light-grey;
+    padding: 0 12px;
+  }
+
+  div#home {
+    left: 0;
+
+    img {
+      vertical-align: middle;
+    }
+  }
+
+  div#get-app {
+    right: 0;
+
+    a {
+      font-weight: bold;
+      color: $link;
+      text-decoration: none;
+    }
+  }
+}
