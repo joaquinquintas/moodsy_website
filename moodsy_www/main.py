@@ -67,10 +67,20 @@ class MoodPageHandler(RequestHandler):
         yield thread_pool.submit(self.async_get, mood_id)
 
 
+class StaticPageHandler(RequestHandler):
+
+    def initialize(self, page):
+        self.template = os.path.join(settings.template_path, page + '.html')
+
+    def get(self):
+        self.render(self.template)
+
+
 application = Application([
     url(r'/static/(.*)', StaticFileHandler, {'path': settings.static_path}),
     url(r"/?", HomePageHandler, name='home'),
     url(r"/m/(.{10})/?", MoodPageHandler, name='mood'),
+    url(r'/privacy/?', StaticPageHandler, {'page': 'privacy'}),
 ], debug=settings.debug)
 
 if '__main__' == __name__:

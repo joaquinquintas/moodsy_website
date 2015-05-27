@@ -1,0 +1,48 @@
+@import 'vars';
+@import 'header';
+@import 'footer';
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #fbfbfb;
+  font-family: 'Lato', sans-serif;
+}
+
+section#main {
+  width: $content-width;
+  max-width: 90%;
+  border-radius: 5px;
+  background-color: white;
+  border: solid 1px $light-grey;
+  margin: 0 auto;
+  position: relative;
+  padding: 0 24px 12px 24px;
+  box-sizing: border-box;
+
+  a {
+    color: $link;
+    text-decoration: none;
+  }
+}
+
+footer {
+  // Same as header
+  box-shadow: 0 0 4px #ccc;
+}
+
+footer {
+  width: 100%;
+  margin-top: 20px;
+}
+
+footer #content {
+  width: $content-width;
+  margin: 0 auto;
+}
+
+@media(min-height: 705px) {
+  footer {
+    bottom: 0;
+  }
+}
