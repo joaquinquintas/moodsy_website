@@ -96,6 +96,12 @@ section#main {
       margin-top: 10px;
     }
 
+    div.comment:before{
+      clear:both;
+      content: '';
+      display: block;
+    }
+
     div.author, div.text {
       float: right;
     }
