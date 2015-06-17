@@ -81,6 +81,7 @@ application = Application([
     url(r"/?", HomePageHandler, name='home'),
     url(r"/m/(.{10})/?", MoodPageHandler, name='mood'),
     url(r'/privacy/?', StaticPageHandler, {'page': 'privacy'}),
+    url(r'/tos/?', StaticPageHandler, {'page': 'tos'}),
 ], debug=settings.debug)
 
 if '__main__' == __name__:

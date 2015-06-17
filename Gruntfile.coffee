@@ -10,6 +10,14 @@ module.exports = (grunt) ->
         ]
         dest: "static"
         expand: true
+      html:
+        cwd: "src"
+        src: [
+          "**/*.html"
+        ]
+        dest: "templates"
+        expand: true
+
 
     clean:
       build:
